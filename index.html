@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration & Result System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Student Portal</h1>
+        <p>Registration and Result Management System</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Student Registration</h2>
+            <p class="subtitle">Enter student details and subject marks</p>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName"
+                           placeholder="Enter student name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="text" id="rollNumber"
+                           placeholder="Enter roll number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" required>
+                        <option value="">Select Course</option>
+                        <option value="MCA">MCA</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BSc IT">BSc IT</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject1">HTML Marks (out of 100)</label>
+                    <input type="number" id="subject1"
+                           min="0" max="100" step="any" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject2">CSS Marks (out of 100)</label>
+                    <input type="number" id="subject2"
+                           min="0" max="100" step="any" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject3">JavaScript Marks (out of 100)</label>
+                    <input type="number" id="subject3"
+                           min="0" max="100" step="any" required>
+                </div>
+
+                <button type="submit" class="btn">
+                    Calculate Result
+                </button>
+
+            </form>
+        </section>
+
+        <section class="card result-card" id="resultSection" hidden>
+            <h2>Student Result</h2>
+            <div id="result"></div>
+        </section>
+
+        <section class="card">
+            <div class="records-heading">
+                <div>
+                    <h2>Registered Students</h2>
+                    <p class="subtitle">Saved student records</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" id="exportButton" class="btn">
+                        Export JSON
+                    </button>
+
+                    <button type="button" id="clearButton"
+                            class="btn btn-danger">
+                        Clear All
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No.</th>
+                            <th>Course</th>
+                            <th>Total</th>
+                            <th>Percentage</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                        <tr>
+                            <td colspan="6">No student records yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Portal | HTML5, CSS3 and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
